@@ -8,12 +8,11 @@ interface ISEO {
   urlImage?: string;
 }
 
-//TODO: Add you domain url
-const URL = '';
+const URL = 'tech.dushg.com';
 
 const SEO: React.FC<ISEO> = ({
-  description = 'Dush blogging his Intrests',
-  title = 'Dush blog',
+  description = 'Eduuh blogging his Interests',
+  title = 'dush blog',
   urlImage = `${URL}/images/preview-light.jpeg`,
 }) => {
   const HTMLMetaTags = [
@@ -61,8 +60,6 @@ const SEO: React.FC<ISEO> = ({
       content: description,
     },
   ];
-
-  //TODO: Add domain url
 
   const otherTwitter = [
     { property: 'twitter:domain', content: '' },

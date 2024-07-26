@@ -6,8 +6,8 @@ const Logo = () => {
     <Link href="/">
       <div className="text-2xl font-bold flex items-center">
         <FireIcon className="h-6 text-[#031e79] dark:text-[#c4d1fc] mr-2" />
-        <span className="text-[#031e79] dark:text-[#c4d1fc]">Dush</span>
-        <span className="text-[#FF47C7]">G</span>
+        <span className="text-[#031e79] dark:text-[#c4d1fc]">dush</span>
+        <span className="text-[#FF47C7]">g</span>
       </div>
     </Link>
   );

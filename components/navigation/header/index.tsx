@@ -1,5 +1,4 @@
 import Logo from '@/components/brand/logo';
-import GitHubMark from '@/components/ui/github-mark';
 import ThemeToggle from '@/components/ui/theme-toggle';
 import Link from 'next/link';
 
