@@ -4,6 +4,5 @@
     "React": "readonly"
   },
   "rules": {
-    "no-unused-vars": [1, { "argsIgnorePattern": "^_" }]
   }
 }
