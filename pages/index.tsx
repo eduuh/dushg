@@ -1,21 +1,21 @@
 import MainLayout from '@/components/layout';
-import LatestPosts from '@/components/sections/latestPosts';
+//import LatestPosts from '@/components/sections/latestPosts';
 import { getAllPosts } from 'lib/mdx';
 import { IPostMeta } from 'types';
 import { NextPageWithLayout } from './page';
+import FeaturedPost from '@/components/sections/featuredPost';
 
 interface IHome {
   postsMeta: IPostMeta[];
 }
 
 //<SEO />
-//<FeaturedPost />
 //<CTA />
 
 const Home: NextPageWithLayout<IHome> = ({ postsMeta }) => {
   return (
     <>
-      <LatestPosts postsMeta={postsMeta} />
+      <FeaturedPost />
     </>
   );
 };
