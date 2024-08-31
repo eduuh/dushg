@@ -14,7 +14,7 @@ const LatestPosts: React.FC<ILatestPosts> = ({ postsMeta }) => {
         <h2 className="text-4xl font-bold mb-10">Latest Posts</h2>
 
         <div className="grid grid-cols-12 gap-8">
-          {postsMeta?.map((meta) => (
+          {postsMeta?.filter(meta => meta.draft).map((meta) => (
             <div
               key={meta.slug}
               className="col-span-12 md:col-span-4 p-2 flex flex-col"
@@ -22,7 +22,7 @@ const LatestPosts: React.FC<ILatestPosts> = ({ postsMeta }) => {
               <div className="relative w-full h-48 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
                 <Image
                   src={`${meta.image || '/images/fast-next-js.png'}`}
-                  alt="Some random blog"
+                  alt="dush g blog"
                   layout="fill"
                   objectFit="cover"
                 />

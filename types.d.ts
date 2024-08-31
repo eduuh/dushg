@@ -1,4 +1,5 @@
 export interface IPostMeta {
+  draft: true;
   excerpt: string;
   slug: string;
   title: string;

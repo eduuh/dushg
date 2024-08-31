@@ -21,7 +21,6 @@ const FeaturedPost = () => {
         <div className="relative rounded-lg w-full h-96 md:h-80 lg:h-[70vh] shadow-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
           <Image
             src="/images/rest_5.jpg"
-            layout="fill"
             alt="Featured Post"
             objectFit="cover"
           />
