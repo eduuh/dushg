@@ -10,5 +10,5 @@ export interface IPostMeta {
 
 export interface IPost {
   content: string;
-  meta: IPostMeta;
+  meta: PostMeta;
 }

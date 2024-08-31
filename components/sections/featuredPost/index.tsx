@@ -24,7 +24,6 @@ const FeaturedPost = () => {
               src="/images/nuphy.webp"
               alt="Nuphy: The programmable Keyboard"
               fill
-              style={{ objectFit: 'cover' }}
             />
           </div>
         </div>
