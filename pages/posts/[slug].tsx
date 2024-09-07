@@ -1,5 +1,6 @@
 import MainLayout from '@/components/layout';
 import { MDXComponents } from '@/components/MDXComponents';
+import PostDetails from '@/components/sections/PostDetails';
 import SEO from '@/components/sections/seo';
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 import 'highlight.js/styles/atom-one-dark.css';
@@ -27,8 +28,8 @@ const PostPage: NextPageWithLayout<IPostPage> = ({ post }) => {
     <>
       <SEO title={`/images/${post.meta.title}`} urlImage={post.meta.image} />
 
-      <section className="py-10">
-        <div className="container mx-auto px-4 md:px-20">
+      <section className="py-3 md:px-40">
+        <div className="container mx-auto px-4">
           <div
             onClick={() => router.back()}
             className="flex items-center space-x-2 cursor-pointer hover:underline"
@@ -37,12 +38,10 @@ const PostPage: NextPageWithLayout<IPostPage> = ({ post }) => {
             <span className="text-md font-semibold">Go back</span>
           </div>
 
-          <div className="px-8 md:px-44 pb-20">
-            <div className="py-10">
-              <p className="text-sm mb-2">
-                {post.meta.date.split(' ').slice(0, 4).join(' ')}
-              </p>
+          <div className="px-2">
+            <div className="py-2">
               <h1 className="text-2xl font-bold">{post.meta.title}</h1>
+              <PostDetails date={post.meta.date} />
             </div>
 
             <MDXRemote {...post.source} components={MDXComponents} />
@@ -60,6 +59,7 @@ PostPage.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string };
   const { content, meta } = getPostFromSlug(slug);
+  console.log(content, meta, "testing")
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
