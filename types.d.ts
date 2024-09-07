@@ -6,6 +6,7 @@ export interface IPostMeta {
   tags: string[];
   date: string;
   image: string;
+  draft: boolean;
 }
 
 export interface IPost {

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { IPostMeta } from 'types';
+import PostDetails from './PostDetails';
 
 interface ILatestPosts {
   postsMeta: IPostMeta[];
@@ -29,15 +30,13 @@ const LatestPosts: React.FC<ILatestPosts> = ({ postsMeta }) => {
               </div>
 
               <div className="flex flex-col space-y-2 p-2">
-                <Link href={`/ posts / ${meta.slug}`}>
+                <Link href={`/posts/${meta.slug}`}>
                   <span className="headingxs cursor-pointer hover:underline">
                     {meta.title}
                   </span>
                 </Link>
 
-                <p className="text-sm">
-                  {meta.date.split(' ').slice(0, 4).join(' ')}
-                </p>
+                <PostDetails date={meta.date.split(' ').slice(0, 4).join(' ')} />
               </div>
             </div>
           ))}

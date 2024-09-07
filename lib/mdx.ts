@@ -20,6 +20,7 @@ export const getSlugs = (): string[] => {
 export const getAllPosts = () => {
   const posts = getSlugs()
     .map((slug) => getPostFromSlug(slug))
+    .filter((slug) => !slug.meta.draft)
     .sort((a, b) => {
       if (a.meta.date > b.meta.date) return 1;
       if (a.meta.date < b.meta.date) return -1;
@@ -43,6 +44,7 @@ export const getPostFromSlug = (slug: string): IPost => {
       tags: (data.tags ?? []).sort(),
       date: (data.date ?? new Date()).toString(),
       image: data.image ?? '',
+      draft: data.draft ?? false
     },
   };
 };

@@ -39,11 +39,10 @@ const PostPage: NextPageWithLayout<IPostPage> = ({ post }) => {
           </div>
 
           <div className="px-2">
-            <div className="py-2">
+            <div className="pt-5">
               <h1 className="text-2xl font-bold">{post.meta.title}</h1>
               <PostDetails date={post.meta.date} />
             </div>
-
             <MDXRemote {...post.source} components={MDXComponents} />
           </div>
         </div>
