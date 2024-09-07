@@ -44,7 +44,8 @@ export const getPostFromSlug = (slug: string): IPost => {
       tags: (data.tags ?? []).sort(),
       date: (data.date ?? new Date()).toString(),
       image: data.image ?? '',
-      draft: data.draft ?? false
+      draft: data.draft ?? false,
+      status: data.status ?? " "
     },
   };
 };

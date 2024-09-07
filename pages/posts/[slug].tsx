@@ -25,29 +25,36 @@ interface IPostPage {
 const PostPage: NextPageWithLayout<IPostPage> = ({ post }) => {
   const router = useRouter();
   return (
-    <>
-      <SEO title={`/images/${post.meta.title}`} urlImage={post.meta.image} />
+    <div className="flex py-3 justify-center">
+      <section className="md:max-w-[85ch]">
+        <SEO title={`/images/${post.meta.title}`} urlImage={post.meta.image} />
 
-      <section className="py-3 md:px-40">
-        <div className="container mx-auto px-4">
-          <div
-            onClick={() => router.back()}
-            className="flex items-center space-x-2 cursor-pointer hover:underline"
-          >
-            <ChevronLeftIcon className="h-4" />
-            <span className="text-md font-semibold">Go back</span>
-          </div>
-
-          <div className="px-2">
-            <div className="pt-5">
-              <h1 className="text-2xl font-bold">{post.meta.title}</h1>
-              <PostDetails date={post.meta.date} />
+        <div className="px-2">
+          <div className="pt-5">
+            <div className='flex justify-between'>
+              <div>
+                <h1 className="text-2xl font-bold">{post.meta.title}</h1>
+                <PostDetails date={post.meta.date} status={post.meta.status} />
+              </div>
+              <div>
+                <div className="flex container mx-auto py-4 items-start h-full" >
+                  <div className="hidden md:visible">
+                    <div
+                      onClick={() => router.back()}
+                      className="flex items-center space-x-2 cursor-pointer hover:underline"
+                    >
+                      <ChevronLeftIcon className="h-4" />
+                      <span className="text-md font-semibold">Go back</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <MDXRemote {...post.source} components={MDXComponents} />
           </div>
-        </div>
-      </section>
-    </>
+        </div >
+      </section >
+    </div >
   );
 };
 
@@ -58,7 +65,6 @@ PostPage.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string };
   const { content, meta } = getPostFromSlug(slug);
-  console.log(content, meta, "testing")
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [

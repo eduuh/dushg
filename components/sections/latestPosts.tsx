@@ -36,7 +36,7 @@ const LatestPosts: React.FC<ILatestPosts> = ({ postsMeta }) => {
                   </span>
                 </Link>
 
-                <PostDetails date={meta.date.split(' ').slice(0, 4).join(' ')} />
+                <PostDetails date={meta.date.split(' ').slice(0, 4).join(' ')} status={meta.status} />
               </div>
             </div>
           ))}
