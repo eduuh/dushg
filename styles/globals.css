@@ -5,23 +5,55 @@
 @layer base {
   html,
   body {
-    @apply dark:bg-gray-900 body scroll-smooth;
+    @apply dark:bg-gray-900 text-gray-900 dark:text-gray-100 scroll-smooth h-full;
   }
-  ol,
-  li {
+  #__next {
+    @apply h-full;
+  }
+  .flex-container {
+    @apply flex items-center justify-center min-h-screen;
+  }
+  .container {
+    @apply mx-auto max-w-3xl px-4;
+  }
+  ol {
     @apply list-decimal;
   }
+  ul {
+    @apply list-disc;
+  }
+  ol, ul {
+    @apply pl-6 mb-4;
+  }
   li {
-    @apply my-8;
+    @apply ml-4 my-2;
   }
   p {
-    @apply mb-4;
+    @apply mb-4 leading-relaxed;
+  }
+  h1 {
+    @apply text-3xl font-bold mb-6 text-primary-800 dark:text-primary-200 no-underline;
   }
   h2 {
-    @apply headingsm my-6;
+    @apply text-2xl font-semibold mb-4 text-primary-700 dark:text-primary-300 no-underline;
   }
   h3 {
-    @apply headingxs my-6;
+    @apply text-xl font-medium mb-3 text-primary-600 dark:text-primary-400 no-underline;
+  }
+  a {
+    @apply text-accent-600 hover:text-accent-700 dark:text-accent-400 dark:hover:text-accent-300 transition-colors duration-200;
+  }
+  code {
+    @apply bg-gray-100 dark:bg-gray-800 rounded px-1.5 py-0.5 font-mono text-sm text-primary-700 dark:text-primary-300;
+  }
+  pre {
+    @apply bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto mb-6 shadow-inner;
+  }
+  blockquote {
+    @apply border-l-4 border-accent-500 pl-4 italic my-4 text-gray-600 dark:text-gray-400;
+  }
+  img {
+    @apply rounded-lg shadow-md max-w-full h-auto my-6;
   }
 }
 

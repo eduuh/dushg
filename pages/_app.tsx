@@ -1,8 +1,8 @@
 import '@/styles/globals.css';
-import { ThemeProvider } from 'next-themes';
-import type { AppProps } from 'next/app';
+import { AppProps } from 'next/app';
 import Script from 'next/script';
 import { NextPageWithLayout } from './page';
+import { ThemeProvider } from 'next-themes';
 
 interface AppPropsWithLayout extends AppProps {
   Component: NextPageWithLayout;
@@ -31,7 +31,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       </Script>
 
       <ThemeProvider enableSystem={true} attribute="class">
-        {getLayout(<Component {...pageProps} />)}
+        <div className="flex-container">
+          <div className="container">
+            {getLayout(<Component {...pageProps} />)}
+          </div>
+        </div>
       </ThemeProvider>
     </>
   );

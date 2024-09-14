@@ -10,7 +10,7 @@ interface ILatestPosts {
 
 const LatestPosts: React.FC<ILatestPosts> = ({ postsMeta }) => {
   return (
-    <section className="py-0">
+    <section className="py-2">
       <div className="container mx-auto px-4 md:px-10">
         <h2 className="text-4xl font-bold mb-10">Latest Posts</h2>
 
